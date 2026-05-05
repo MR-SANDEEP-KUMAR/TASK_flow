@@ -22,7 +22,6 @@ export default function SignupPage() {
     try {
       const res = await authAPI.signup(form);
       login(res.data.user, res.data.token);
-      toast.success('Account created!');
       navigate('/dashboard');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Signup failed');
