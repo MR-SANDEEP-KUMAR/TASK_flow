@@ -13,9 +13,13 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "*",
+  origin: [
+    "http://localhost:3000",
+    "https://task-flow-lilac-three.vercel.app"
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 app.use(express.json());
 
