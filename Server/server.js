@@ -13,13 +13,9 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://tasked-flow101.vercel.app"
-  ],
+  origin: "*",
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
 }));
 app.use(express.json());
 
